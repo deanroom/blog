@@ -6,6 +6,14 @@
 *** 销售
 *** 技术
 ** 技术架构
+*** 重要实践
+**** Git
+**** 敏捷
+**** Linux
+**** Docker
+**** CNCF
+**** CI/CD
+**** DevOps
 *** 终端
 **** 学员
 ***** PC
@@ -77,17 +85,18 @@
 ****** 发现
 ****** 注册
 ****** 监控
-****** 熔断降级
+****** 熔断
+****** 限流
 **** 基础设施
 ***** 运行时
 ****** Docker
 ****** Docker-Compose
 ****** Kubernetes
-***** 开发语言、框架
+***** 开发框架、语言
 ****** AspnetCore/c#
-****** Java
-****** Python
-****** Go
+****** StringBoot/Java
+****** Flask/Python
+****** Go micro/Go
 ***** 服务通信
 ****** REST
 ******* OpenAPI
@@ -109,12 +118,5 @@
 ******* Mongodb
 ******* Cassendra
 ******* ElasticSearch
-*** 实践
-**** Linux
-**** Git
-**** CNCF
-**** 敏捷
-**** CI/CD
-**** DevOps
 
 @endmindmap
