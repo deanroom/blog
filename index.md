@@ -1,4 +1,4 @@
-#愿景
+# 愿景
 搭建一套基于云原生的微服务架构平台，能满足公司现有和将来的业务支撑，横向和纵向解耦业务实现。能够持续集成公司新业务，能够保证现有业务的稳定迭代。
 
-![avatar](/out/resources/Preview/Preview.png)
+![Overview](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.github.com/deanroom/blog/master/uml/overview.iuml)
