@@ -1,0 +1,76 @@
+@startuml
+ !include resources/Archimate_PlantUML/Archimate.puml
+
+title systemcontext
+
+archimate #APPLICATION "PC网站 API网关"  as API1 <<application-service>>
+archimate #APPLICATION "App1 API网关"  as API2 <<application-service>>
+archimate #APPLICATION "App2 API网关"  as API3 <<application-service>>
+archimate #APPLICATION "小程序1 API网关"  as API4 <<application-service>>
+archimate #APPLICATION "小程序2 API网关"  as API5 <<application-service>>
+archimate #APPLICATION "小程序N API网关"  as APIN <<application-service>>
+
+archimate #Business "资讯"  as News <<business-service>>
+archimate #Business "产品"  as FrontProduct <<business-service>>
+archimate #Business "购课"  as Buy <<business-service>>
+archimate #Business "知识库"  as Knowledge <<business-service>>
+archimate #Business "管理端"  as Admin <<business-service>>
+
+
+archimate #Business "用户服务"  as Auth <<business-service>>
+archimate #Business "产品服务"  as Product <<business-service>>
+archimate #Business "订单服务"  as Order <<business-service>>
+archimate #Business "市场服务"  as Market <<business-service>>
+archimate #Business "学习服务"  as Learning <<business-service>>
+archimate #Business "内容服务"  as Content <<business-service>>
+archimate #Business "日志"      as Log <<business-service>>
+archimate #Business "数据分析"  as DataAnalyze <<business-service>>
+
+
+API1 *-down- News
+API1 *-down- FrontProduct
+API1 *-down- Buy
+API1 *-down- Knowledge
+API1 *-down- Admin
+
+API2 *-down- FrontProduct
+API2 *-down- Buy
+
+API3 *-down- FrontProduct
+
+
+API4 *-down- FrontProduct
+API4 *-down- Buy
+
+API5 *-down- Knowledge
+
+APIN *-down- FrontProduct
+
+Content -up-> News
+
+Auth -up-> FrontProduct
+Product -up-> FrontProduct
+Learning -up-> FrontProduct
+Auth -up-> Buy
+Order -up-> Buy
+Market -up-> Buy
+Content -up-> Knowledge
+DataAnalyze -up-> Knowledge
+Content -up-> Knowledge
+
+Auth -up-> Admin
+Product -up-> Admin
+Order -up-> Admin
+Market -up-> Admin
+Learning -up-> Admin
+Content -up-> Admin
+Log -up-> Admin
+DataAnalyze -up-> Admin
+
+archimate #APPLICATION "CRM服务" as CRM <<application-Service>>
+
+CRM .up.|> Auth
+CRM .up.|> Order
+CRM .up.|> Product
+
+@enduml

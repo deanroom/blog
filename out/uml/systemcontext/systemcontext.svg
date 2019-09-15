@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="425px" preserveAspectRatio="none" style="width:981px;height:425px;" version="1.1" viewBox="0 0 981 425" width="981px" zoomAndPan="magnify"><defs><filter height="300%" id="feddsm9zqa40f" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><text fill="#000000" font-family="sans-serif" font-size="18" lengthAdjust="spacingAndGlyphs" textLength="129" x="430" y="16.708">systemcontext</text><!--entity API1--><rect fill="#A9DCDF" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="120" x="613.5" y="28.9531"/><image height="16" width="16" x="666" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX82/r//39SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAA3exLaNqtLeYAAAAASUVORK5CYII=" y="38.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="100" x="623.5" y="66.9482">PC网站 API网关</text><!--entity API2--><rect fill="#A9DCDF" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="109" x="310" y="28.9531"/><image height="16" width="16" x="357" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX82/r//39SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAA3exLaNqtLeYAAAAASUVORK5CYII=" y="38.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="320" y="66.9482">App1 API网关</text><!--entity API3--><rect fill="#A9DCDF" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="109" x="6" y="28.9531"/><image height="16" width="16" x="53" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX82/r//39SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAA3exLaNqtLeYAAAAASUVORK5CYII=" y="38.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="89" x="16" y="66.9482">App2 API网关</text><!--entity API4--><rect fill="#A9DCDF" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="124" x="454.5" y="28.9531"/><image height="16" width="16" x="509" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX82/r//39SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAA3exLaNqtLeYAAAAASUVORK5CYII=" y="38.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="104" x="464.5" y="66.9482">小程序1 API网关</text><!--entity API5--><rect fill="#A9DCDF" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="124" x="819.5" y="28.9531"/><image height="16" width="16" x="874" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX82/r//39SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAA3exLaNqtLeYAAAAASUVORK5CYII=" y="38.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="104" x="829.5" y="66.9482">小程序2 API网关</text><!--entity APIN--><rect fill="#A9DCDF" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="125" x="150" y="28.9531"/><image height="16" width="16" x="205" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX82/r//39SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAA3exLaNqtLeYAAAAASUVORK5CYII=" y="38.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="105" x="160" y="66.9482">小程序N API网关</text><!--entity News--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="48" x="730.5" y="139.9531"/><image height="16" width="16" x="747" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="149.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="740.5" y="177.9482">资讯</text><!--entity FrontProduct--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="48" x="305.5" y="139.9531"/><image height="16" width="16" x="322" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="149.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="315.5" y="177.9482">产品</text><!--entity Buy--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="48" x="492.5" y="139.9531"/><image height="16" width="16" x="509" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="149.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="502.5" y="177.9482">购课</text><!--entity Knowledge--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="62" x="850.5" y="139.9531"/><image height="16" width="16" x="874" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="149.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="860.5" y="177.9482">知识库</text><!--entity Admin--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="62" x="596.5" y="139.9531"/><image height="16" width="16" x="620" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="149.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="42" x="606.5" y="177.9482">管理端</text><!--entity Auth--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="76" x="367.5" y="250.9531"/><image height="16" width="16" x="398" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="377.5" y="288.9482">用户服务</text><!--entity Product--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="76" x="256.5" y="250.9531"/><image height="16" width="16" x="287" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="266.5" y="288.9482">产品服务</text><!--entity Order--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="76" x="589.5" y="250.9531"/><image height="16" width="16" x="620" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="599.5" y="288.9482">订单服务</text><!--entity Market--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="76" x="478.5" y="250.9531"/><image height="16" width="16" x="509" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="488.5" y="288.9482">市场服务</text><!--entity Learning--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="76" x="145.5" y="250.9531"/><image height="16" width="16" x="176" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="155.5" y="288.9482">学习服务</text><!--entity Content--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="76" x="894.5" y="250.9531"/><image height="16" width="16" x="925" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="904.5" y="288.9482">内容服务</text><!--entity Log--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="48" x="700.5" y="250.9531"/><image height="16" width="16" x="717" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="28" x="710.5" y="288.9482">日志</text><!--entity DataAnalyze--><rect fill="#FFFF00" filter="url(#feddsm9zqa40f)" height="51.2969" style="stroke: #000000; stroke-width: 1.5;" width="76" x="783.5" y="250.9531"/><image height="16" width="16" x="814" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAL0lEQVR4XmNgGAXI4B+JGAX8+/9/639SMLIhJGtGN2QYGECWIcia4YaQiEcBFAAADDtLaFX9acoAAAAASUVORK5CYII=" y="260.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="56" x="793.5" y="288.9482">数据分析</text><!--entity CRM--><rect fill="#A9DCDF" filter="url(#feddsm9zqa40f)" height="52.5938" style="stroke: #000000; stroke-width: 1.5;" width="168" x="321.5" y="361.9531"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacingAndGlyphs" textLength="148" x="331.5" y="384.9482">«application-Service»</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="60" x="375.5" y="401.2451">CRM服务</text><!--reverse link API1 to News--><path d="M700.0435,90.8275 C711.7379,106.8532 725.2013,125.303 735.8153,139.8481 " fill="none" id="API1&lt;-News" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="692.2866,80.1977,692.5923,87.4023,699.3603,89.8912,699.0546,82.6866,692.2866,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API1 to FrontProduct--><path d="M600.9166,78.5124 C599.4317,78.9975 597.9582,79.4782 596.5,79.9531 C507.1793,109.0438 400.7814,142.8672 353.8232,157.7529 " fill="none" id="API1&lt;-FrontProduct" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="613.409,74.417,606.4615,72.4852,602.0061,78.1553,608.9537,80.0871,613.409,74.417" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API1 to Buy--><path d="M626.2135,87.8849 C597.9458,107.8704 563.2275,132.4164 540.5158,148.4738 " fill="none" id="API1&lt;-Buy" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="637.0864,80.1977,629.878,80.3954,627.288,87.1254,634.4964,86.9277,637.0864,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API1 to Knowledge--><path d="M732.9929,86.2017 C771.207,106.5948 819.3021,132.261 850.224,148.7626 " fill="none" id="API1&lt;-Knowledge" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="721.4806,80.0581,724.8908,86.4119,732.0674,85.7078,728.6572,79.354,721.4806,80.0581" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API1 to Admin--><path d="M657.8488,92.2202 C651.3449,107.9144 643.9649,125.7225 638.1111,139.8481 " fill="none" id="API1&lt;-Admin" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="662.8311,80.1977,656.8388,84.2092,658.237,91.2835,664.2293,87.272,662.8311,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API2 to FrontProduct--><path d="M352.4443,92.687 C347.5318,108.2667 341.9836,125.8624 337.5737,139.8481 " fill="none" id="API2&lt;-FrontProduct" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="356.3823,80.1977,350.7631,84.7171,352.7736,91.6423,358.3928,87.1229,356.3823,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API2 to Buy--><path d="M410.5066,88.05 C437.4544,107.729 470.3945,131.784 492.3312,147.8035 " fill="none" id="API2&lt;-Buy" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="399.7539,80.1977,402.2404,86.9666,409.4449,87.2747,406.9584,80.5059,399.7539,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API3 to FrontProduct--><path d="M127.6126,82.1464 C185.4871,106.0277 265.8069,139.1708 305.427,155.5196 " fill="none" id="API3&lt;-FrontProduct" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="115.2604,77.0494,119.2809,83.0357,126.3531,81.6268,122.3325,75.6406,115.2604,77.0494" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API4 to FrontProduct--><path d="M461.861,86.8859 C426.0503,108.1425 380.9879,134.8907 353.7553,151.0556 " fill="none" id="API4&lt;-FrontProduct" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="473.1284,80.1977,465.9272,79.8207,462.8094,86.323,470.0107,86.7,473.1284,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API4 to Buy--><path d="M516.5,93.6241 C516.5,108.9691 516.5,126.1421 516.5,139.8481 " fill="none" id="API4&lt;-Buy" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="516.5,80.1977,512.5,86.1977,516.5,92.1977,520.5,86.1977,516.5,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link API5 to Knowledge--><path d="M881.5,93.6241 C881.5,108.9691 881.5,126.1421 881.5,139.8481 " fill="none" id="API5&lt;-Knowledge" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="881.5,80.1977,877.5,86.1977,881.5,92.1977,885.5,86.1977,881.5,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link APIN to FrontProduct--><path d="M249.132,89.2065 C267.438,106.5737 289.0811,127.107 305.293,142.4875 " fill="none" id="APIN&lt;-FrontProduct" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="239.6362,80.1977,241.2359,87.2291,248.3417,88.4569,246.742,81.4255,239.6362,80.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link News to Content--><path d="M782.8189,183.1126 C812.9487,201.9015 860.7915,231.736 894.2548,252.6035 " fill="none" id="News&lt;-Content" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="778.5059,180.4231,784.0258,188.5797,782.7485,183.069,788.2592,181.7916,778.5059,180.4231" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link FrontProduct to Auth--><path d="M350.0745,195.5027 C361.9281,212.8153 376.6692,234.345 387.9686,250.8481 " fill="none" id="FrontProduct&lt;-Auth" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="347.127,191.1977,348.9111,200.8837,349.9518,195.3234,355.5121,196.364,347.127,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link FrontProduct to Product--><path d="M319.7462,196.3866 C314.3363,213.5436 307.6891,234.6247 302.5737,250.8481 " fill="none" id="FrontProduct&lt;-Product" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="321.3823,191.1977,314.8608,198.5781,319.8786,195.9663,322.4905,200.984,321.3823,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link FrontProduct to Learning--><path d="M301.3308,186.8694 C277.3022,205.1378 242.6988,231.4458 217.2045,250.8285 " fill="none" id="FrontProduct&lt;-Learning" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="305.3911,183.7825,295.8057,186.0453,301.4108,186.8087,300.6475,192.4138,305.3911,183.7825" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Buy to Auth--><path d="M488.5008,193.4523 C470.8554,211.0977 448.2471,233.706 431.0832,250.8699 " fill="none" id="Buy&lt;-Auth" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="492.4147,189.5384,483.2223,193.074,488.8792,193.074,488.8792,198.7308,492.4147,189.5384" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Buy to Order--><path d="M544.4992,193.4523 C562.1446,211.0977 584.7529,233.706 601.9168,250.8699 " fill="none" id="Buy&lt;-Order" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="540.5853,189.5384,544.1208,198.7308,544.1208,193.074,549.7777,193.074,540.5853,189.5384" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Buy to Market--><path d="M516.5,196.3866 C516.5,213.5436 516.5,234.6247 516.5,250.8481 " fill="none" id="Buy&lt;-Market" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="516.5,191.1977,512.5,200.1977,516.5,196.1977,520.5,200.1977,516.5,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Knowledge to Content--><path d="M883.9875,195.9438 C890.0934,213.1798 900.0767,234.4848 909.7972,250.8481 " fill="none" id="Knowledge&lt;-Content" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="882.3716,191.1977,881.4862,201.0067,883.9833,195.9308,889.0592,198.428,882.3716,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Knowledge to Content--><path d="M907.7087,195.9438 C917.548,213.1798 927.1308,234.4848 932.3173,250.8481 " fill="none" id="Knowledge&lt;-Content-1" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="904.9302,191.1977,906.0252,200.9855,907.4563,195.5127,912.9292,196.9437,904.9302,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Knowledge to DataAnalyze--><path d="M865.0186,195.9438 C855.7018,213.1798 844.1855,234.4848 835.3405,250.8481 " fill="none" id="Knowledge&lt;-DataAnalyze" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="867.584,191.1977,859.7855,197.213,865.2064,195.5962,866.8231,201.0171,867.584,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to Auth--><path d="M591.3411,183.5326 C550.7527,203.8268 485.1724,236.6169 443.749,257.3286 " fill="none" id="Admin&lt;-Auth" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="596.1637,181.1213,586.325,181.5687,591.6916,183.3575,589.9028,188.724,596.1637,181.1213" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to Product--><path d="M591.6204,179.2786 C581.012,183.2126 569.3373,187.3928 558.5,190.9531 C467.0926,220.9828 440.7456,217.5941 350.5,250.9531 C344.6884,253.1014 338.6356,255.5851 332.7493,258.1421 " fill="none" id="Admin&lt;-Product" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="596.4127,177.4915,586.5823,176.8885,591.7279,179.2387,589.3777,184.3842,596.4127,177.4915" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to Order--><path d="M627.5,196.3866 C627.5,213.5436 627.5,234.6247 627.5,250.8481 " fill="none" id="Admin&lt;-Order" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="627.5,191.1977,623.5,200.1977,627.5,196.1977,631.5,200.1977,627.5,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to Market--><path d="M597.8896,195.0635 C580.5031,212.45 558.748,234.2051 542.105,250.8481 " fill="none" id="Admin&lt;-Market" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="601.7554,191.1977,592.563,194.7333,598.2199,194.7333,598.2199,200.3901,601.7554,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to Learning--><path d="M591.5116,180.0566 C580.9896,183.9694 569.3881,187.9436 558.5,190.9531 C419.0291,229.5037 376.3147,206.8465 238.5,250.9531 C232.9867,252.7176 227.3038,254.9009 221.7785,257.2417 " fill="none" id="Admin&lt;-Learning" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="596.2637,178.2668,586.4314,177.6959,591.5846,180.0292,589.2513,185.1824,596.2637,178.2668" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to Content--><path d="M663.5705,176.4813 C712.5558,191.7535 802.5997,220.8776 877.5,250.9531 C882.9695,253.1493 888.678,255.6049 894.2591,258.1013 " fill="none" id="Admin&lt;-Content" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="658.671,174.9573,666.0767,181.45,663.4454,176.4424,668.4529,173.8111,658.671,174.9573" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to Log--><path d="M653.3758,195.0635 C668.5693,212.45 687.5806,234.2051 702.1244,250.8481 " fill="none" id="Admin&lt;-Log" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="649.9976,191.1977,652.9078,200.6068,653.2877,194.9627,658.9318,195.3426,649.9976,191.1977" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Admin to DataAnalyze--><path d="M663.1561,185.8542 C697.2585,205.3665 748.5175,234.6951 783.4087,254.6586 " fill="none" id="Admin&lt;-DataAnalyze" style="stroke: #000000; stroke-width: 1.0;"/><polygon fill="#000000" points="658.6695,183.2872,664.4947,191.2287,663.0093,185.7704,668.4677,184.285,658.6695,183.2872" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Auth to CRM--><path d="M405.5,322.6216 C405.5,335.9308 405.5,350.0049 405.5,361.7086 " fill="none" id="Auth&lt;-CRM" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="398.5001,322.1482,405.5,302.1482,412.5001,322.1481,398.5001,322.1482" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Order to CRM--><path d="M571.1385,304.8877 C536.3935,322.4168 492.1327,344.7465 458.1065,361.9129 " fill="none" id="Order&lt;-CRM" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="568.3276,298.4655,589.3368,295.7066,574.6336,310.9649,568.3276,298.4655" style="stroke: #000000; stroke-width: 1.0;"/><!--reverse link Product to CRM--><path d="M334.1261,316.4362 C349.0196,331.4639 365.5784,348.1718 378.9943,361.7086 " fill="none" id="Product&lt;-CRM" style="stroke: #000000; stroke-width: 1.0; stroke-dasharray: 7.0,7.0;"/><polygon fill="none" points="329.0723,321.2811,319.9656,302.1482,339.0162,311.4261,329.0723,321.2811" style="stroke: #000000; stroke-width: 1.0;"/><!--
+@startuml
+
+
+skinparam defaultTextAlignment center
+skinparam wrapWidth 400
+skinparam maxMessageSize 150
+
+skinparam Arrow {
+    Color #000000
+    FontColor #000000
+    FontSize 12
+}
+skinparam Folder<<grouping>> {
+    Shadowing true
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+skinparam Folder<<group>> {
+    Shadowing true
+    FontColor #444444
+    BackgroundColor lightgrey
+}
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+title systemcontext
+
+archimate #APPLICATION "PC网站 API网关"  as API1 <<application-service>>
+archimate #APPLICATION "App1 API网关"  as API2 <<application-service>>
+archimate #APPLICATION "App2 API网关"  as API3 <<application-service>>
+archimate #APPLICATION "小程序1 API网关"  as API4 <<application-service>>
+archimate #APPLICATION "小程序2 API网关"  as API5 <<application-service>>
+archimate #APPLICATION "小程序N API网关"  as APIN <<application-service>>
+
+archimate #Business "资讯"  as News <<business-service>>
+archimate #Business "产品"  as FrontProduct <<business-service>>
+archimate #Business "购课"  as Buy <<business-service>>
+archimate #Business "知识库"  as Knowledge <<business-service>>
+archimate #Business "管理端"  as Admin <<business-service>>
+
+
+archimate #Business "用户服务"  as Auth <<business-service>>
+archimate #Business "产品服务"  as Product <<business-service>>
+archimate #Business "订单服务"  as Order <<business-service>>
+archimate #Business "市场服务"  as Market <<business-service>>
+archimate #Business "学习服务"  as Learning <<business-service>>
+archimate #Business "内容服务"  as Content <<business-service>>
+archimate #Business "日志"      as Log <<business-service>>
+archimate #Business "数据分析"  as DataAnalyze <<business-service>>
+
+
+API1 *-down- News
+API1 *-down- FrontProduct
+API1 *-down- Buy
+API1 *-down- Knowledge
+API1 *-down- Admin
+
+API2 *-down- FrontProduct
+API2 *-down- Buy
+
+API3 *-down- FrontProduct
+
+
+API4 *-down- FrontProduct
+API4 *-down- Buy
+
+API5 *-down- Knowledge
+
+APIN *-down- FrontProduct
+
+Content -up-> News
+
+Auth -up-> FrontProduct
+Product -up-> FrontProduct
+Learning -up-> FrontProduct
+Auth -up-> Buy
+Order -up-> Buy
+Market -up-> Buy
+Content -up-> Knowledge
+DataAnalyze -up-> Knowledge
+Content -up-> Knowledge
+
+Auth -up-> Admin
+Product -up-> Admin
+Order -up-> Admin
+Market -up-> Admin
+Learning -up-> Admin
+Content -up-> Admin
+Log -up-> Admin
+DataAnalyze -up-> Admin
+
+archimate #APPLICATION "CRM服务" as CRM <<application-Service>>
+
+CRM .up.|> Auth
+CRM .up.|> Order
+CRM .up.|> Product
+
+@enduml
+
+PlantUML version 1.2019.09(Tue Aug 27 00:19:51 CST 2019)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Java Version: 11.0.4+11-post-Ubuntu-1ubuntu218.04.3
+Operating System: Linux
+OS Version: 5.0.0-27-generic
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
