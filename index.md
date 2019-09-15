@@ -23,3 +23,36 @@
     基础设施偏重运行环境,程序构建,部署,通讯,持久化的规范和约束.
 ![Overview](out/uml/overview/overview.svg)
 
+## 重要实践
+
+### Git使用规范
+  
+  在开发,部署活动中所有代码,脚本必须在git中托管,不论是自建gitlab,还是平台服务,须严格执行git规范.
+
+- 项目代码务必在git仓库托管
+- 提交代码请参考[Angular Commit规范](https://github.com/angular/angular/blob/master/CONTRIBUTING.md)
+- 了解并使用Git-Flow [GitFlow参考](https://zhuanlan.zhihu.com/p/66048537)
+
+### 建立适合团队自身的敏捷开发方式
+
+  Wiki[敏捷开发方法](https://zh.wikipedia.org/wiki/%E6%95%8F%E6%8D%B7%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91)
+  应该在团队内部建立共识,进行敏捷开发常识普及并集体制定适合本团队的规范方法.
+
+### Linux
+
+  开发团队强调对Linux的使用和依赖,借助Linux的开放性达成研发团队的共同语言符号,对所开发程序的底层操作系统有感性和理性的认知.另外需要了解目前Linux是对docker支持最友好的操作系统.
+
+### Docker
+
+  [Wiki简介](https://en.wikipedia.org/wiki/Docker_(software))
+
+  研发团队须了解目前Docker已经是的大多数软件交付事实上的标准,目前绝大多数软件产品均提供Docker镜像的发布方式,能够极大避免环境配置,版本冲突等问题.尤其是服务端可以快速部署,快速销毁.所以请养成交付标准Docker镜像的习惯.
+
+### CNCF
+
+  [CNCF](https://www.cncf.io)
+  [CNCF Landscape](https://zhuanlan.zhihu.com/p/68881339)
+  
+### CI/CD
+
+  CI/CD（持续集成和持续发布）。创建CI/CD环境，从而使源代码上的任意修改，都能够自动通过容器进行编译、测试，并被部署到预生产甚至生产环境中
