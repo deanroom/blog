@@ -132,7 +132,49 @@
     提供API网关基础组件．
 
   技术后端的内容会根据程序运行或者新业务的实现逐步更新维护，需要技术团队有一套常规计划来保证技术后端的有效，而且一定要在评估新的业务需求适合把隐性技术需求考虑进去，避免技术债越欠越多．
+
 ## 基础设施
+
+  定义若干基础设施在不同唯独保证平台的稳定运行，并提供扩展能力
+
+### 运行时
+
+- Docker
+- Docker Compose
+- Kubernetes
+
+### 开发框架,语言
+
+### 服务通信
+
+### 持久化
+
+### ELK
+
+#### 简介
+  ELK是三个开源软件的缩写，分别为：Elasticsearch 、 Logstash以及Kibana , 它们都是开源软件。不过现在还新增了一个Beats，它是一个轻量级的日志收集处理工具(Agent)，Beats占用资源少，适合于在各个服务器上搜集日志后传输给Logstash，官方也推荐此工具，目前由于原本的ELK Stack成员中加入了 Beats 工具所以已改名为Elastic Stack。
+
+  Elastic Stack包含：
+
+  - Elasticsearch是个开源分布式搜索引擎，提供搜集、分析、存储数据三大功能。它的特点有：分布式，零配置，自动发现，索引自动分片，索引副本机制，restful风格接口，多数据源，自动搜索负载等。详细可参考Elasticsearch权威指南
+
+  - Logstash 主要是用来日志的搜集、分析、过滤日志的工具，支持大量的数据获取方式。一般工作方式为c/s架构，client端安装在需要收集日志的主机上，server端负责将收到的各节点日志进行过滤、修改等操作在一并发往elasticsearch上去。
+
+  - Kibana 也是一个开源和免费的工具，Kibana可以为 Logstash 和 ElasticSearch 提供的日志分析友好的 Web 界面，可以帮助汇总、分析和搜索重要数据日志。
+#### 应用
+
+  - 统一日志平台，所有微服务，应用日志可以采用SerialLog，Logstash，beats方式记录日志到Elasticsearch,然后借助Kibana进行查询,检索甚至建立图标进行分析
+
+  ![Log](/statics/image/elklog.png))
+
+  - APM
+    使用ElasticSearch可以使用其提供的APM功能,每个应用使用封装的Elastic.Apm.NetCoreAll实现APM监控
+
+  ![APM](/statics/image/apm.png))
+
+### Service Mash
+
+
 
 ### 规划
 
