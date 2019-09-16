@@ -147,15 +147,31 @@
 
 ### 开发框架,语言
 
-#### AspnetCore/C#
+- AspnetCore/C#
 
-#### StringBoot/Java
+- StringBoot/Java
 
-#### Flask/Python
+- Flask/Python
 
-#### Go micro/Go
+- Go micro/Go
 
 ### 服务通信
+
+#### REST
+
+- OpenAPI
+- GraphQL
+
+#### RPC
+
+- Dubbo
+- gRPC
+- Thrift
+
+#### 异步消息
+
+- RabbitMQ
+- Kafka
 
 ### 持久化
 
