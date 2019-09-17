@@ -44,7 +44,7 @@
 
 ### Docker
 
-  [Wiki简介](https://en.wikipedia.org/wiki/Docker_(software))
+  [Wiki简介](https://en.wikipedia.org/wiki/Docker_(software)
 
   研发团队须了解目前Docker已经是的大多数软件交付事实上的标准,目前绝大多数软件产品均提供Docker镜像的发布方式,能够极大避免环境配置,版本冲突等问题.尤其是服务端可以快速部署,快速销毁.所以请养成交付标准Docker镜像的习惯.
 
@@ -219,7 +219,7 @@
 
 ## 基础设施
 
-定义若干基础设施在不同唯独保证平台的稳定运行，并提供扩展能力
+定义若干基础设施在不同维度保证平台的稳定运行，并提供扩展能力
 
 ### 运行时
 
@@ -255,7 +255,7 @@
   - 镜像仓库
     可以托管镜像到阿里云的容器镜像服务,国内各大平台基本都有提供服务,基础镜像可以共有,业务镜像可以设置私有
 
-   ![Docker Registry](/statics/image/dockerregistry.png))
+   ![Docker Registry](/statics/image/dockerregistry.png)
 
 
   镜像按照tag区分不同版本,功能
@@ -396,12 +396,12 @@ ELK是三个开源软件的缩写，分别为：Elasticsearch 、 Logstash以及
 
 - 统一日志平台，所有微服务，应用日志可以采用SerialLog，Logstash，beats方式记录日志到Elasticsearch,然后借助Kibana进行查询,检索甚至建立图标进行分析
 
-  ![Log](/statics/image/elklog.png))
+  ![Log](/statics/image/elklog.png)
 
 - APM
     使用ElasticSearch可以使用其提供的APM功能,每个应用使用封装的Elastic.Apm.NetCoreAll实现APM监控
 
-  ![APM](/statics/image/apm.png))
+  ![APM](/statics/image/apm.png)
 
 ### Service Mash
 
