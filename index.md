@@ -122,6 +122,83 @@
 
 - 公共组件库
     采用DIP原则开发抽象公共组件库,进行抽象定义,所有基础服务的业务逻辑实现只依赖抽象组件定义不依赖具体实现,外部组件的具体实现依赖抽象定义,采用依赖注入/控制翻转原则在程序入口耦合.
+   ![Core Library](/statics/image/core.png))
+    上图目前定义的公共组件为目前微服务中所用
+    
+    - Configuration  配置类
+    - DependencyInjection 依赖注入入口定义
+    - Cache 缓存
+    - Data 定义若干数据库的Repository的抽象和实现
+    - MVC 定义api服务的公共组件抽象和实现以及扩展
+
+    ```csharp
+        public interface ICache
+        {
+            Task<T> BindAsync<T>(string key, Func<Task<T>> operationGetData = null, 
+                DistributedCacheEntryOptions cacheEntryOptions=null,
+                CancellationToken token = default) where T : class;
+            Task RemoveAsync(string key, CancellationToken token = default);
+            Task SetAsync<T>(string key, T value) where T : class;
+            //... 其它方法定义
+            Task<T> GetAsync<T>(string key) where T : class;
+        }
+    ```
+
+    ```csharp
+      public class Cache : ICache, IDisposable
+      {
+          private readonly ILogger<Cache> _logger;
+          private readonly IDistributedCache _distributedCache;
+          private readonly IConfiguration _configuration;
+          private readonly ICacheActions _cacheActions;
+
+          public Cache(ILogger<Cache> logger,
+              IDistributedCache distributedCache,
+              IConfiguration configuration,
+              ICacheActions cacheActions)
+          {
+              _logger = logger;
+              _distributedCache = distributedCache;
+              _configuration = configuration;
+              _cacheActions = cacheActions;
+          }
+           public async Task<T> BindAsync<T>(string key,
+            Func<Task<T>> operationGetData = null,
+            DistributedCacheEntryOptions cacheEntryOptions = null,
+            CancellationToken token = default) where T : class
+        {
+            try
+            {
+                var byteCacheEntity = await _distributedCache.GetAsync(key, token);
+                if (byteCacheEntity != null)
+                {
+                    var cacheEntity = JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(byteCacheEntity));
+                    return cacheEntity;
+                }
+
+                if (operationGetData == null) return null;
+                var data = await operationGetData();
+                await SetDistributedCacheAsync(key, data, cacheEntryOptions);
+                return data;
+            }
+            catch (StackExchange.Redis.RedisConnectionException ex)
+            {
+                _logger.LogError("Redis Connect Fail.", ex);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Get cached entity fail.", ex);
+            }
+
+            return await GetDataFromSource(operationGetData);
+        }
+
+          //... 其它实现定义
+
+      }
+    ```
+    上图为缓存公共组件的抽象定义和它的一个实现
+    
 - 服务治理
     微服务部署由于Docker的引入可以最大程度降低环境复杂度的影响,但是由于服务绝对个数增多,带来一系列管理问题,需要一套完备的服务治理策略,从服务发现,注册,治理,监控需要一定的工作来保证.
 - APM
@@ -142,8 +219,115 @@
 ### 运行时
 
 - Docker
+  - 镜像编译
+  每个应用跟随代码编写自己的Dockerfile,打包成标准Docker镜像,比如aspnet core程序可以按照如下格式:
+
+  ```
+
+  FROM registry.cn-qingdao.aliyuncs.com/uguobapublic/dotnetruntime AS base
+  WORKDIR /app
+  EXPOSE 80
+
+  FROM registry.cn-qingdao.aliyuncs.com/uguobapublic/dotnetsdk AS build
+  WORKDIR /src
+  COPY Services/Auth/dreamwork.auth.api/ src/Services/Auth/dreamwork.auth.api/
+  COPY BuildingBlocks/ src/BuildingBlocks/
+  RUN dotnet restore src/Services/Auth/dreamwork.auth.api/dreamwork.auth.api.csproj
+
+  WORKDIR /src/src/Services/Auth/dreamwork.auth.api
+  RUN dotnet build dreamwork.auth.api.csproj -c Release -o /app
+
+  FROM build AS publish
+  RUN dotnet publish dreamwork.auth.api.csproj -c Release -o /app
+
+  FROM base AS final
+  WORKDIR /app
+  COPY --from=publish /app .
+  ENTRYPOINT ["dotnet", "dreamwork.auth.api.dll"]
+
+  ```
+
+  - 镜像仓库
+    可以托管镜像到阿里云的容器镜像服务,国内各大平台基本都有提供服务,基础镜像可以共有,业务镜像可以设置私有
+
+   ![Docker Registry](/statics/image/dockerregistry.png))
+
+
+  镜像按照tag区分不同版本,功能
+  比如:dreamwork.auth.api,dreamwork.auth.api:x.x,dreamwork.auth.api:dev_latest
+
 - Docker Compose
-- Kubernetes
+  开发环境,测试环境可以使用 Docker Compose 进行容器编排,定义yaml文件组织服务,应用
+  示例:
+
+  ```yaml
+  version: '3.4'
+
+  services:
+    dreamwork.apigateway.web:
+      image: ${DOCKER_REGISTRY}/${DOCKER_REGISTRY_NAMESPACE}/dreamwork.apigateway.web:${VERSION_NUMBER}
+      environment:
+        - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+        - UseElastic=true
+        - EnableAPIdoc=${EnableAPIdoc}
+        - ElasticApm__LogLevel=Info
+      ports:
+        - "80"
+      dns:
+        - ${DNS_PROVIDER1}
+        - ${DNS_PROVIDER2}
+
+    dreamwork.web.portal:
+      image: ${DOCKER_REGISTRY}/${DOCKER_REGISTRY_NAMESPACE}/dreamwork.web.portal:${VERSION_NUMBER}
+      build:
+        labels:
+          dreamwork: "web"
+        context: ../../src
+        dockerfile: Terminal/Web/dreamwork.web.portal/Dockerfile
+      environment:
+        - ASPNETCORE_ENVIRONMENT=${ASPNETCORE_ENVIRONMENT}
+        - UseElastic=true
+        - EnableAPIdoc=${EnableAPIdoc}
+        - APIGateway=http://dreamwork.apigateway.web/
+        - "80"
+      dns:
+        - ${DNS_PROVIDER1}
+        - ${DNS_PROVIDER2}
+  ```
+
+  以上定义了web网站的api网关,同时定义了web网站,在集成,测试服务器可以方便地使用一条docker compos命令快速启动服务,所有应用服务均可以采用此种方式快速验证,快速销毁,更方便的是基础设施的测试验证.
+  
+  ```yaml
+    dreamwork.data.mysql:
+      image: registry.cn-qingdao.aliyuncs.com/uguobapublic/dreamwork.mysql:latest
+      command: --default-authentication-plugin=mysql_native_password --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci  --lower_case_table_names=1
+      ports:
+        - 5306:3306
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: ******
+      volumes:
+        - /var/lib/dreamwork/mysql/data:/var/cd /mysql
+
+    dreamwork.data.cache.redis:
+      image: ${DOCKER_REGISTRY}/${DOCKER_REGISTRY_NAMESPACE}/dreamwork.data.cache.redis:${VERSION_NUMBER}
+      build:
+        context: ./dockerconfig/Data/cache/redis/
+        dockerfile: Dockerfile
+      restart: always
+      ports:
+        - 6379:6379
+      dns:
+        - ${DNS_PROVIDER1}
+        - ${DNS_PROVIDER2}
+  
+  ```
+
+  以上配置快速定义了一个mysql和redis服务,并且redis在获取到公共镜像后能从配置脚步中加载自定义配置.
+  
+- Kubernetes=k8s
+  
+  对于Kubernetes的使用会牵涉到方方面面,内容及其繁杂,此处仅做简单说明.
 
 ### 开发框架,语言
 
