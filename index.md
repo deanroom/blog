@@ -122,10 +122,10 @@
 
 - 公共组件库
     采用DIP原则开发抽象公共组件库,进行抽象定义,所有基础服务的业务逻辑实现只依赖抽象组件定义不依赖具体实现,外部组件的具体实现依赖抽象定义,采用依赖注入/控制翻转原则在程序入口耦合.
-   ![Core Library](/statics/image/core.png))
+    ![Core Library](/statics/image/core.png)
     上图目前定义的公共组件为目前微服务中所用
     
-    - Configuration  配置类
+    - Configuration  配置组件
     - DependencyInjection 依赖注入入口定义
     - Cache 缓存
     - Data 定义若干数据库的Repository的抽象和实现
@@ -134,10 +134,12 @@
     ```csharp
         public interface ICache
         {
-            Task<T> BindAsync<T>(string key, Func<Task<T>> operationGetData = null, 
+            Task<T> BindAsync<T>(string key,
+                Func<Task<T>> operationGetData = null,
                 DistributedCacheEntryOptions cacheEntryOptions=null,
                 CancellationToken token = default) where T : class;
-            Task RemoveAsync(string key, CancellationToken token = default);
+            Task RemoveAsync(string key,
+              CancellationToken token = default);
             Task SetAsync<T>(string key, T value) where T : class;
             //... 其它方法定义
             Task<T> GetAsync<T>(string key) where T : class;
@@ -147,22 +149,22 @@
     ```csharp
       public class Cache : ICache, IDisposable
       {
-          private readonly ILogger<Cache> _logger;
-          private readonly IDistributedCache _distributedCache;
-          private readonly IConfiguration _configuration;
-          private readonly ICacheActions _cacheActions;
+        private readonly ILogger<Cache> _logger;
+        private readonly IDistributedCache _distributedCache;
+        private readonly IConfiguration _configuration;
+        private readonly ICacheActions _cacheActions;
 
-          public Cache(ILogger<Cache> logger,
-              IDistributedCache distributedCache,
-              IConfiguration configuration,
-              ICacheActions cacheActions)
-          {
-              _logger = logger;
-              _distributedCache = distributedCache;
-              _configuration = configuration;
-              _cacheActions = cacheActions;
-          }
-           public async Task<T> BindAsync<T>(string key,
+        public Cache(ILogger<Cache> logger,
+            IDistributedCache distributedCache,
+            IConfiguration configuration,
+            ICacheActions cacheActions)
+        {
+            _logger = logger;
+            _distributedCache = distributedCache;
+            _configuration = configuration;
+            _cacheActions = cacheActions;
+        }
+        public async Task<T> BindAsync<T>(string key,
             Func<Task<T>> operationGetData = null,
             DistributedCacheEntryOptions cacheEntryOptions = null,
             CancellationToken token = default) where T : class
@@ -172,13 +174,15 @@
                 var byteCacheEntity = await _distributedCache.GetAsync(key, token);
                 if (byteCacheEntity != null)
                 {
-                    var cacheEntity = JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(byteCacheEntity));
+                    var cacheEntity = 
+                    JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(byteCacheEntity));
                     return cacheEntity;
                 }
 
                 if (operationGetData == null) return null;
                 var data = await operationGetData();
-                await SetDistributedCacheAsync(key, data, cacheEntryOptions);
+                await SetDistributedCacheAsync(key,
+                        data, cacheEntryOptions);
                 return data;
             }
             catch (StackExchange.Redis.RedisConnectionException ex)
@@ -197,6 +201,7 @@
 
       }
     ```
+    
     上图为缓存公共组件的抽象定义和它的一个实现
     
 - 服务治理
