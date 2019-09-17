@@ -1,0 +1,63 @@
+@startuml
+
+
+package "业务后端" {
+       [产品服务]
+       [用户服务]
+       [其它服务]
+    }
+
+package "公共类库" {
+    top to bottom direction
+    folder "Cache" {
+       () ICache <-- [CacheImpl]
+    }
+    folder "Data" {
+        () IRepository <-- [Cassandra]
+        () IRepository <-- [EFCore]
+        () IRepository <-- [Mongodb]
+        [Cassandra]
+        [Cassandra]
+    }
+    ' folder "Services" {
+    '     () IServiceCollection as service
+    '     service-->[Net]
+    '     service-->[ApiVersion]
+    '     service-->[BaseAPIControllers]
+
+    ' }
+    ' folder "Applications" {
+    '     () IWebHostBuilder as host
+    '     () IApplicationBuilder as builder
+    '     host-->[ELK]
+    '     builder-->[Filters]
+    '     builder-->[Middlewares]
+    '     builder-->[OpenAPI-Swagger]
+    '     builder-->[APM]
+    ' }
+}
+
+
+    ' service <-- IRepository 
+    ' service <-- ICache 
+    ' builder <-- service 
+    ' host <-- builder 
+    
+    ICache <-- 业务后端
+    IRepository <-- 业务后端
+    ' service <-- 业务后端
+    ' host <-- 业务后端
+    ' builder <-- 业务后端
+    ' IRepository <-- [产品服务]
+    ' IRepository <-- [用户服务]
+    ' IRepository <-- [其它服务]
+    ' service <-- [产品服务]
+    ' service <-- [用户服务]
+    ' service <-- [其它服务]
+    ' host <-- [产品服务]
+    ' host --> [用户服务]
+    ' host --> [其它服务]
+    ' builder --> [产品服务]
+    ' builder --> [用户服务]
+    ' builder --> [其它服务]
+@enduml
