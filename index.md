@@ -1,12 +1,10 @@
-
 # Hello World - Dreamwork
 
 ```c#
 
  (Simple Life , Exercise Mind, Clean Code)
   => Dream World ;
-
- ```
+```
 
 # 在线教育微服务架构尝试-Microservice
 
@@ -27,12 +25,12 @@
     技术后端和业务后端的最主要区别在于技术后端并不直接参与构建产品服务层面的业务,更多的是提供安全性,高并发,高可用的支撑,监控和管理.
 - **基础设施**
     基础设施偏重运行环境,程序构建,部署,通讯,持久化的规范和约束.
-![Overview](out/uml/overview/overview.svg)
+  ![Overview](out/uml/overview/overview.svg)
 
 ## 重要实践
 
 ### Git使用规范
-  
+
   在开发,部署活动中所有代码,脚本必须在git中托管,不论是自建gitlab,还是平台服务,须严格执行git规范.
 
 - 项目代码务必在git仓库托管
@@ -58,7 +56,7 @@
 
   [CNCF](https://www.cncf.io)
   以及[CNCF Landscape](https://zhuanlan.zhihu.com/p/68881339)
-  
+
 ### CI/CD
 
   CI/CD（持续集成和持续发布）。创建CI/CD环境，从而使源代码上的任意修改，都能够自动通过容器进行编译、测试，并被部署到预生产甚至生产环境中
@@ -81,7 +79,7 @@
   - 课程
   - 习题
   - 考试
-  习题考试等内容可以进一步分解为题库中心/服务,均取决于业务要求.
+    习题考试等内容可以进一步分解为题库中心/服务,均取决于业务要求.
 - 订单服务
   - 订单服务
     提供完备和可扩展的订单中心,支持平台内所有订单行为.
@@ -117,109 +115,118 @@
 ### 终端API
 
 解决终端差异性,并提供restAPI接口,作为平台业务和终端链接的最终桥梁,是平台内提供对外服务的公网接口.
-  
+
 - 接口加解密
 - 终端差异化业务实现.
   这部分内容最易变化,所有业务逻辑的变更均有可能导致此处发生更改.
 
 ## 技术后端
-  
+
   提供非业务但必须实现的服务
 
 - 公共组件库
     采用DIP原则开发抽象公共组件库,进行抽象定义,所有基础服务的业务逻辑实现只依赖抽象组件定义不依赖具体实现,外部组件的具体实现依赖抽象定义,采用依赖注入/控制翻转原则在程序入口耦合.
-    ![Core Library](/statics/image/core.png)
-
+    ![Core Library](statics/image/core.png)
+  
     上图目前定义的公共组件为目前微服务中所用
-    - Configuration  配置组件
-    - DependencyInjection 依赖注入入口定义
-    - Cache 缓存
-    - Data 定义若干数据库的Repository的抽象和实现
-    - MVC 定义api服务的公共组件抽象和实现以及扩展
-
+  
+  - Configuration  配置组件
+  
+  - DependencyInjection 依赖注入入口定义
+  
+  - Cache 缓存
+  
+  - Data 定义若干数据库的Repository的抽象和实现
+  
+  - MVC 定义api服务的公共组件抽象和实现以及扩展
+    
     ```csharp
-        public interface ICache
-        {
-            Task<T> BindAsync<T>(string key,
-                Func<Task<T>> operationGetData = null,
-                DistributedCacheEntryOptions cacheEntryOptions=null,
-                CancellationToken token = default) where T : class;
-            Task RemoveAsync(string key,
-              CancellationToken token = default);
-            Task SetAsync<T>(string key, T value) where T : class;
-            //... 其它方法定义
-            Task<T> GetAsync<T>(string key) where T : class;
-        }
-    ```
-
-    ```csharp
-      public class Cache : ICache, IDisposable
+      public interface ICache
       {
-        private readonly ILogger<Cache> _logger;
-        private readonly IDistributedCache _distributedCache;
-        private readonly IConfiguration _configuration;
-        private readonly ICacheActions _cacheActions;
-
-        public Cache(ILogger<Cache> logger,
-            IDistributedCache distributedCache,
-            IConfiguration configuration,
-            ICacheActions cacheActions)
-        {
-            _logger = logger;
-            _distributedCache = distributedCache;
-            _configuration = configuration;
-            _cacheActions = cacheActions;
-        }
-        public async Task<T> BindAsync<T>(string key,
-            Func<Task<T>> operationGetData = null,
-            DistributedCacheEntryOptions cacheEntryOptions = null,
-            CancellationToken token = default) where T : class
-        {
-            try
-            {
-                var byteCacheEntity = await _distributedCache.GetAsync(key, token);
-                if (byteCacheEntity != null)
-                {
-                    var cacheEntity = 
-                    JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(byteCacheEntity));
-                    return cacheEntity;
-                }
-
-                if (operationGetData == null) return null;
-                var data = await operationGetData();
-                await SetDistributedCacheAsync(key,
-                        data, cacheEntryOptions);
-                return data;
-            }
-            catch (StackExchange.Redis.RedisConnectionException ex)
-            {
-                _logger.LogError("Redis Connect Fail.", ex);
-            }
-            catch (Exception ex)
-            {
-                _logger.LogError("Get cached entity fail.", ex);
-            }
-
-            return await GetDataFromSource(operationGetData);
-        }
-
-          //... 其它实现定义
-
+          Task<T> BindAsync<T>(string key,
+              Func<Task<T>> operationGetData = null,
+              DistributedCacheEntryOptions cacheEntryOptions=null,
+              CancellationToken token = default) where T : class;
+          Task RemoveAsync(string key,
+            CancellationToken token = default);
+          Task SetAsync<T>(string key, T value) where T : class;
+          //... 其它方法定义
+          Task<T> GetAsync<T>(string key) where T : class;
       }
     ```
     
-    上图为缓存公共组件的抽象定义和它的一个实现
-   ![Docker Registry](/out/uml/businessarchitect/businessarchitect.svg)
-    上图为公共组件在其它微服务中的依赖
+    ```csharp
+    public class Cache : ICache, IDisposable
+    {
+      private readonly ILogger<Cache> _logger;
+      private readonly IDistributedCache _distributedCache;
+      private readonly IConfiguration _configuration;
+      private readonly ICacheActions _cacheActions;
     
+      public Cache(ILogger<Cache> logger,
+          IDistributedCache distributedCache,
+          IConfiguration configuration,
+          ICacheActions cacheActions)
+      {
+          _logger = logger;
+          _distributedCache = distributedCache;
+          _configuration = configuration;
+          _cacheActions = cacheActions;
+      }
+      public async Task<T> BindAsync<T>(string key,
+          Func<Task<T>> operationGetData = null,
+          DistributedCacheEntryOptions cacheEntryOptions = null,
+          CancellationToken token = default) where T : class
+      {
+          try
+          {
+              var byteCacheEntity = await _distributedCache.GetAsync(key, token);
+              if (byteCacheEntity != null)
+              {
+                  var cacheEntity = 
+                  JsonConvert.DeserializeObject<T>(Encoding.UTF8.GetString(byteCacheEntity));
+                  return cacheEntity;
+              }
+    
+              if (operationGetData == null) return null;
+              var data = await operationGetData();
+              await SetDistributedCacheAsync(key,
+                      data, cacheEntryOptions);
+              return data;
+          }
+          catch (StackExchange.Redis.RedisConnectionException ex)
+          {
+              _logger.LogError("Redis Connect Fail.", ex);
+          }
+          catch (Exception ex)
+          {
+              _logger.LogError("Get cached entity fail.", ex);
+          }
+    
+          return await GetDataFromSource(operationGetData);
+      }
+    
+        //... 其它实现定义
+    
+    }
+    ```
+    
+    上图为缓存公共组件的抽象定义和它的一个实现
+    ![Docker Registry](out/uml/businessarchitect/businessarchitect.svg)
+    上图为公共组件在其它微服务中的依赖
+
 - 服务治理
     微服务部署由于Docker的引入可以最大程度降低环境复杂度的影响,但是由于服务绝对个数增多,带来一系列管理问题,需要一套完备的服务治理策略,从服务发现,注册,治理,监控需要一定的工作来保证.
+
 - APM
     有效建立分布式调用链追踪,实时查看系统调用性能指标.
+
 - 可以建立服务异常预警
     通过短信,邮件方式通知运维人员
+
 - 应用日志
     采集并记录所有应用程序运行日志,这里推荐采用ELK平台,对日志的后续分析检索比较方便
+
 - API网关
     提供API网关基础组件．
 
@@ -232,39 +239,38 @@
 ### 运行时
 
 - Docker
+  
   - 镜像编译
-  每个应用跟随代码编写自己的Dockerfile,打包成标准Docker镜像,比如aspnet core程序可以按照如下格式:
-
-  ```
-
+    每个应用跟随代码编写自己的Dockerfile,打包成标准Docker镜像,比如aspnet core程序可以按照如下格式:
+  
+  ```Dockerfile
+  
   FROM registry.cn-qingdao.aliyuncs.com/uguobapublic/dotnetruntime AS base
   WORKDIR /app
   EXPOSE 80
-
+  
   FROM registry.cn-qingdao.aliyuncs.com/uguobapublic/dotnetsdk AS build
   WORKDIR /src
   COPY Services/Auth/dreamwork.auth.api/ src/Services/Auth/dreamwork.auth.api/
   COPY BuildingBlocks/ src/BuildingBlocks/
   RUN dotnet restore src/Services/Auth/dreamwork.auth.api/dreamwork.auth.api.csproj
-
+  
   WORKDIR /src/src/Services/Auth/dreamwork.auth.api
   RUN dotnet build dreamwork.auth.api.csproj -c Release -o /app
-
+  
   FROM build AS publish
   RUN dotnet publish dreamwork.auth.api.csproj -c Release -o /app
-
+  
   FROM base AS final
   WORKDIR /app
   COPY --from=publish /app .
   ENTRYPOINT ["dotnet", "dreamwork.auth.api.dll"]
-
   ```
-
+  
   - 镜像仓库
     可以托管镜像到阿里云的容器镜像服务,国内各大平台基本都有提供服务,基础镜像可以共有,业务镜像可以设置私有
-
-   ![Docker Registry](/statics/image/dockerregistry.png)
-
+    
+    ![Docker Registry](statics/image/dockerregistry.png)
 
   镜像按照tag区分不同版本,功能
   比如:dreamwork.auth.api,dreamwork.auth.api:x.x,dreamwork.auth.api:dev_latest
@@ -272,10 +278,10 @@
 - Docker Compose
   开发环境,测试环境可以使用 Docker Compose 进行容器编排,定义yaml文件组织服务,应用
   示例:
-
+  
   ```yaml
   version: '3.4'
-
+  
   services:
     dreamwork.apigateway.web:
       image: ${DOCKER_REGISTRY}/${DOCKER_REGISTRY_NAMESPACE}/dreamwork.apigateway.web:${VERSION_NUMBER}
@@ -289,7 +295,7 @@
       dns:
         - ${DNS_PROVIDER1}
         - ${DNS_PROVIDER2}
-
+  
     dreamwork.web.portal:
       image: ${DOCKER_REGISTRY}/${DOCKER_REGISTRY_NAMESPACE}/dreamwork.web.portal:${VERSION_NUMBER}
       build:
@@ -307,7 +313,7 @@
         - ${DNS_PROVIDER1}
         - ${DNS_PROVIDER2}
   ```
-
+  
   以上定义了web网站的api网关,同时定义了web网站,在集成,测试服务器可以方便地使用一条docker compos命令快速启动服务,所有应用服务均可以采用此种方式快速验证,快速销毁,更方便的是基础设施的测试验证.
   
   ```yaml
@@ -321,7 +327,7 @@
         MYSQL_ROOT_PASSWORD: ******
       volumes:
         - /var/lib/dreamwork/mysql/data:/var/cd /mysql
-
+  
     dreamwork.data.cache.redis:
       image: ${DOCKER_REGISTRY}/${DOCKER_REGISTRY_NAMESPACE}/dreamwork.data.cache.redis:${VERSION_NUMBER}
       build:
@@ -333,11 +339,10 @@
       dns:
         - ${DNS_PROVIDER1}
         - ${DNS_PROVIDER2}
-  
   ```
-
-  以上配置快速定义了一个mysql和redis服务,并且redis在获取到公共镜像后能从配置脚步中加载自定义配置.
   
+  以上配置快速定义了一个mysql和redis服务,并且redis在获取到公共镜像后能从配置脚步中加载自定义配置.
+
 - Kubernetes=k8s
   
   对于Kubernetes的使用会牵涉到方方面面,内容及其繁杂,此处仅做简单说明.
@@ -389,7 +394,7 @@
 ##### Elasticsearch
 
 ###### 简介
-  
+
 ELK是三个开源软件的缩写，分别为：Elasticsearch 、 Logstash以及Kibana , 它们都是开源软件。不过现在还新增了一个Beats，它是一个轻量级的日志收集处理工具(Agent)，Beats占用资源少，适合于在各个服务器上搜集日志后传输给Logstash，官方也推荐此工具，目前由于原本的ELK Stack成员中加入了 Beats 工具所以已改名为Elastic Stack。
 
   Elastic Stack包含：
@@ -403,13 +408,13 @@ ELK是三个开源软件的缩写，分别为：Elasticsearch 、 Logstash以及
 ###### 应用
 
 - 统一日志平台，所有微服务，应用日志可以采用SerialLog，Logstash，beats方式记录日志到Elasticsearch,然后借助Kibana进行查询,检索甚至建立图标进行分析
-
-  ![Log](/statics/image/elklog.png)
+  
+  ![Log](statics/image/elklog.png)
 
 - APM
     使用ElasticSearch可以使用其提供的APM功能,每个应用使用封装的Elastic.Apm.NetCoreAll实现APM监控
-
-  ![APM](/statics/image/apm.png)
+  
+  ![APM](statics/image/apm.png)
 
 ### Service Mash
 
@@ -454,4 +459,5 @@ ELK是三个开源软件的缩写，分别为：Elasticsearch 、 Logstash以及
 - 服务治理完备
 
 ### 第...阶段
-  - **完备微服务平台**
+
+- **完备微服务平台**
