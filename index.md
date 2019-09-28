@@ -1,8 +1,11 @@
 
 # Hello World - Dreamwork
 
- Life => Simple Dream 
-    && Clean Code && Beautiful World && 
+```c#
+
+ (Simple Life , Exercise Mind, Clean Code)=> Dream World ;
+
+ ```
 
 # 在线教育微服务架构尝试-Microservice
 
