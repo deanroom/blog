@@ -3,7 +3,8 @@
 
 ```c#
 
- (Simple Life , Exercise Mind, Clean Code)=> Dream World ;
+ (Simple Life , Exercise Mind, Clean Code)
+  => Dream World ;
 
  ```
 
